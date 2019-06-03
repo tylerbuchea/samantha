@@ -1,12 +1,30 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import Footer from '../components/Footer'
-import Navbar from '../components/Navbar'
-import './all.sass'
-import useSiteMetadata from './SiteMetadata'
+import React from 'react';
+import Helmet from 'react-helmet';
+import styled from 'styled-components';
 
-const TemplateWrapper = ({ children }) => {
-  const { title, description } = useSiteMetadata()
+import './skeleton.css';
+import './index.css';
+import useSiteMetadata from './SiteMetadata';
+import Footer from './Footer';
+
+export function TemplateWrapper({ children }) {
+  const { title, description } = useSiteMetadata();
+  // const data = useStaticQuery(
+  //   graphql`
+  //     fragment fluidImage on File {
+  //       childImageSharp {
+  //         fluid(quality: 100) {
+  //           ...GatsbyImageSharpFluid_withWebp
+  //         }
+  //       }
+  //     }
+  //     query {
+  //       headshot: file(relativePath: { eq: "headshot.jpg" }) {
+  //         ...fluidImage
+  //       }
+  //     }
+  //   `
+  // );
   return (
     <div>
       <Helmet>
@@ -43,12 +61,17 @@ const TemplateWrapper = ({ children }) => {
         <meta property="og:title" content={title} />
         <meta property="og:url" content="/" />
         <meta property="og:image" content="/img/og-image.jpg" />
+        <link
+          rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+          integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+          crossorigin="anonymous"
+        />
       </Helmet>
-      <Navbar />
       <div>{children}</div>
       <Footer />
     </div>
-  )
+  );
 }
 
-export default TemplateWrapper
+export default styled(TemplateWrapper)``;
