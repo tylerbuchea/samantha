@@ -5,8 +5,8 @@ import styled from 'styled-components';
 export function Footer({ className }) {
   return (
     <div className={className}>
-      <div className="container-restricted" style={{ paddingBottom: 30 }}>
-        <div className="has-text-centered">
+      <div className="container-restricted ">
+        <div className="">
           <hr />
           ©2019 Samantha Shroyer. All Rights Reserved.
         </div>

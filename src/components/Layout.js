@@ -7,7 +7,7 @@ import './index.css';
 import useSiteMetadata from './SiteMetadata';
 import Footer from './Footer';
 
-export function TemplateWrapper({ children }) {
+export function TemplateWrapper({ children, className }) {
   const { title, description } = useSiteMetadata();
   // const data = useStaticQuery(
   //   graphql`
@@ -55,7 +55,7 @@ export function TemplateWrapper({ children }) {
           href="/img/safari-pinned-tab.svg"
           color="#ff4400"
         />
-        <meta name="theme-color" content="#fff" />
+        <meta name="theme-color" content="#1eaedb" />
 
         <meta property="og:type" content="business.business" />
         <meta property="og:title" content={title} />
@@ -68,10 +68,16 @@ export function TemplateWrapper({ children }) {
           crossorigin="anonymous"
         />
       </Helmet>
-      <div>{children}</div>
-      <Footer />
+      <div className={className}>
+        <div className="content">{children}</div>
+        <Footer />
+      </div>
     </div>
   );
 }
 
-export default styled(TemplateWrapper)``;
+export default styled(TemplateWrapper)`
+  .content {
+    min-height: 57vh;
+  }
+`;

@@ -11,12 +11,13 @@ export default class Home extends Component {
       <div>
         <Header />
         <Contact />
-        <div className="container-restricted">
+        {/* <div className="container-restricted">
           <div className="content-item conent-blog">
-            <h2>Blog</h2>
+            <hr />
+            <h2>Latest</h2>
           </div>
         </div>
-        <BlogRoll />
+        <BlogRoll /> */}
       </div>
     );
   }

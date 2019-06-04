@@ -68,7 +68,6 @@ export function Contact({ className }) {
               </div>
               <img src={headshot} className="icon-avatar" alt="avatar" />
             </div>
-            <hr />
           </article>
         </section>
       </div>
