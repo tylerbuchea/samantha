@@ -39,7 +39,10 @@ export default styled(Footer)`
       grid-template-columns: 1fr;
     }
   }
+  .requiredLogos {
+    width: 100%;
+  }
   .requiredLogos img {
-    width: 120px;
+    max-width: 120px;
   }
 `;

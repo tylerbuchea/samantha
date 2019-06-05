@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import headshot from '../img/headshot.jpg';
+import kellerWilliamsLogo from '../img/keller-williams-logo.jpg';
 
 export function Contact({ className }) {
   return (
@@ -79,6 +80,9 @@ export function Contact({ className }) {
               </div>
               <img src={headshot} className="icon-avatar" alt="avatar" />
             </div>
+            <div>
+              <img src={kellerWilliamsLogo} className="kwLogo" />
+            </div>
           </article>
         </section>
       </div>
@@ -89,5 +93,9 @@ export function Contact({ className }) {
 export default styled(Contact)`
   .about-copy {
     padding-right: 15px;
+  }
+  .kwLogo {
+    max-width: 300px;
+    width: 100%;
   }
 `;
