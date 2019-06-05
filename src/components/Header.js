@@ -1,69 +1,75 @@
-import React, { Component } from 'react';
-import headshot from '../img/headshot.jpg';
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-export default class Header extends Component {
-  static defaultProps = {};
+export function Header() {
+  return (
+    <div className="container-restricted">
+      <header className="header">
+        <h1>
+          <a href="https://samantha.realty">
+            Samantha Shroyer <i className="fa fa-home" />
+          </a>
+        </h1>
+        <h2>Real Estate Agent</h2>
 
-  static propTypes = {};
+        <nav className="navbar">
+          <div className="container">
+            <ul className="navbar-list">
+              <li className="navbar-item">
+                <a className="icon navbar-link" href="/">
+                  <i className="fa fa-home" /> Home
+                </a>
+              </li>
 
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+              <li className="navbar-item">
+                <a className="icon navbar-link" href="/blog">
+                  <i className="fa fa-pencil-alt" /> Blog
+                </a>
+              </li>
 
-  render() {
-    return (
-      <div className="container-restricted">
-        <header className="header row">
-          <h1>
-            <a href="https://samanthashroyer.com">
-              Samantha Shroyer{' '}
-              <div>
-                <i className="fa fa-home" />
-              </div>
-            </a>
-          </h1>
-          <h2>Real Estate Agent</h2>
+              <li className="navbar-item">
+                <a
+                  className="icon navbar-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://www.instagram.com/samilynn36/"
+                >
+                  <i className="fab fa-instagram" /> Instagram
+                </a>
+              </li>
 
-          <hr className="divider" />
+              <li className="navbar-item">
+                <a
+                  className="icon navbar-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://facebook.com/sami.shroyer"
+                >
+                  <i className="fab fa-facebook" /> Facebook
+                </a>
+              </li>
 
-          <nav className="navbar">
-            <div className="container">
-              <ul className="navbar-list">
-                <li className="navbar-item">
-                  <a className="icon navbar-link" href="/">
-                    <i className="fa fa-home" /> Home
-                  </a>
-                </li>
-
-                <li className="navbar-item">
-                  <a className="icon navbar-link" href="/blog">
-                    <i className="fa fa-pencil-alt" /> Blog
-                  </a>
-                </li>
-
-                <li className="navbar-item">
-                  <a
-                    className="icon navbar-link"
-                    href="https://facebook.com/sami.shroyer"
-                  >
-                    <i className="fab fa-facebook" /> Facebook
-                  </a>
-                </li>
-
-                <li className="navbar-item">
-                  <a
-                    className="icon navbar-link"
-                    href="https://www.linkedin.com/in/tyler-buchea-b3a43376"
-                  >
-                    <i className="fab fa-linkedin" /> Linkedin
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </nav>
-        </header>
-      </div>
-    );
-  }
+              <li className="navbar-item">
+                <a
+                  className="icon navbar-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://www.linkedin.com/in/tyler-buchea-b3a43376"
+                >
+                  <i className="fab fa-linkedin" /> Linkedin
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+    </div>
+  );
 }
+
+Header.propTypes = { className: PropTypes.string };
+
+Header.defaultProps = { className: null };
+
+export default styled(Header)``;

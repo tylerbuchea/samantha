@@ -76,8 +76,4 @@ export function TemplateWrapper({ children, className }) {
   );
 }
 
-export default styled(TemplateWrapper)`
-  .content {
-    min-height: 57vh;
-  }
-`;
+export default styled(TemplateWrapper)``;

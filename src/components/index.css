@@ -31,8 +31,16 @@
     U+2000-206f, U+2074, U+20ac, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 
-html {
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
   background-color: white;
+  margin: 0px;
+  padding: 0px;
+  border: none;
 }
 
 a {
@@ -51,7 +59,7 @@ a:visited {
 
 ul,
 ol {
-  margin-left: 2em;
+  margin-left: 2rem;
 }
 
 form input[type='email'] {
@@ -59,21 +67,23 @@ form input[type='email'] {
   max-width: 220px;
 }
 
-.divider {
-  display: none;
-}
-
 .header {
-  margin-top: 2em;
+  margin-top: 2rem;
 }
 
-.header h1 div {
+.header h1 .fa-home {
   font-size: 22px;
   display: inline-block;
 }
 
+@media (max-width: 415px) {
+  .header h1 .fa-home {
+    display: none;
+  }
+}
+
 .navbar {
-  margin-bottom: 2em;
+  margin-bottom: 2rem;
 }
 
 .navbar + .docs-section {
@@ -84,7 +94,7 @@ form input[type='email'] {
 .navbar-spacer {
   display: block;
   width: 100%;
-  height: 6.5rem;
+  padding: 20px 0px;
   background: #fff;
   z-index: 99;
   border-top: 1px solid #eee;
@@ -101,25 +111,24 @@ form input[type='email'] {
 
 .navbar-list {
   list-style: none;
-  margin-bottom: 0;
+  margin: 0;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .navbar-item {
   position: relative;
-  margin-bottom: 0;
-  flex: 1;
+  flex: 1 126px auto;
   text-align: center;
+  margin: 10px;
 }
 
 .navbar-link {
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 0.2rem;
-  margin-right: 35px;
   text-decoration: none;
-  line-height: 6.5rem;
-  color: #222;
+  flex: 1;
 }
 
 .navbar-link.active {
@@ -150,22 +159,16 @@ form input[type='email'] {
   display: inline-block;
 }
 
-@media (max-width: 600px) {
-  .header h1 div {
-    display: none !important;
-  }
-  .navbar {
-    display: none !important;
-  }
-  .divider {
-    display: block !important;
-  }
-}
-
 .about {
   display: flex !important;
   align-items: flex-start;
   align-content: flex-start;
+}
+
+@media (max-width: 755px) {
+  .about {
+    flex-direction: column-reverse;
+  }
 }
 
 .about-copy {
@@ -183,12 +186,6 @@ form input[type='email'] {
   padding: 5px;
 }
 
-@media (max-width: 755px) {
-  .about .icon-avatar {
-    display: none;
-  }
-}
-
 .content-direct ol {
   display: block;
 }
@@ -197,12 +194,6 @@ form input[type='email'] {
 .fa-disabled:hover,
 .fa-disabled:active {
   color: #aaa;
-}
-
-.content-item,
-.header {
-  padding-left: 20px;
-  padding-right: 20px;
 }
 
 @media (max-width: 1010px) {
