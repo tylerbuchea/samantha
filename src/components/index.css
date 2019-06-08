@@ -1,3 +1,4 @@
+/* Workaround https://stackoverflow.com/questions/49781726/react-font-awesome-renders-big-icon-until-scales-down */
 @import '../../node_modules/@fortawesome/fontawesome-svg-core/styles.css';
 
 * {

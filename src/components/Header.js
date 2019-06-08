@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql, Link } from 'gatsby';
 import Img from 'gatsby-image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faPencilAlt } from '@fortawesome/free-solid-svg-icons';
@@ -44,20 +44,20 @@ export function Header({ className }) {
             <div className="container">
               <ul className="navbar-list">
                 <li className="navbar-item">
-                  <a className="icon navbar-link" href="/">
+                  <Link className="icon navbar-link" to="/">
                     <FontAwesomeIcon style={{ fontSize: 17 }} icon={faHome} />{' '}
                     Home
-                  </a>
+                  </Link>
                 </li>
 
                 <li className="navbar-item">
-                  <a className="icon navbar-link" href="/blog">
+                  <Link className="icon navbar-link" to="/blog">
                     <FontAwesomeIcon
                       style={{ fontSize: 17 }}
                       icon={faPencilAlt}
                     />{' '}
                     Blog
-                  </a>
+                  </Link>
                 </li>
 
                 <li className="navbar-item">

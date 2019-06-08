@@ -7,12 +7,8 @@ import PreviewCompatibleImage from './PreviewCompatibleImage';
 
 export function BlogRoll({ className }) {
   const renderPosts = ({ node: post }) => (
-    <div className="is-parent column is-6" key={post.id}>
-      <article
-        className={`blog-list-item tile is-child box notification ${
-          post.frontmatter.featuredpost ? 'is-featured' : ''
-        }`}
-      >
+    <div className="card" key={post.id}>
+      <article className="article">
         <header>
           {post.frontmatter.featuredimage ? (
             <div className="featured-thumbnail">
@@ -25,16 +21,11 @@ export function BlogRoll({ className }) {
             </div>
           ) : null}
           <p className="post-meta">
-            <Link
-              className="title has-text-primary is-size-4"
-              to={post.fields.slug}
-            >
+            <Link className="title" to={post.fields.slug}>
               {post.frontmatter.title}
             </Link>
             <span> &bull; </span>
-            <span className="subtitle is-size-5 is-block">
-              {post.frontmatter.date}
-            </span>
+            <span className="subtitle">{post.frontmatter.date}</span>
           </p>
         </header>
         <p>
@@ -84,9 +75,7 @@ export function BlogRoll({ className }) {
   return (
     <div className={className}>
       <div className="container-restricted">
-        <div className="content-item conent-blog">
-          <div>{posts && posts.map(renderPosts)}</div>
-        </div>
+        <div className="cards">{posts && posts.map(renderPosts)}</div>
       </div>
     </div>
   );
@@ -100,4 +89,15 @@ BlogRoll.defaultProps = {
   className: null,
 };
 
-export default styled(BlogRoll)``;
+export default styled(BlogRoll)`
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 300px));
+    grid-gap: 20px;
+    align-items: center;
+    justify-content: center;
+  }
+  .card {
+    margin: 0px auto;
+  }
+`;
