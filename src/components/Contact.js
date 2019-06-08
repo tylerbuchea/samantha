@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 import headshot from '../img/headshot.jpg';
-import kellerWilliamsLogo from '../img/keller-williams-logo.jpg';
 
 export function Contact({ className }) {
   return (
@@ -62,26 +61,23 @@ export function Contact({ className }) {
                   working in Portland. I love animals{' '}
                   <span role="img" aria-label="dog">
                     🐶
-                  </span>{' '}
+                  </span>
                   and finding people their perfect home{' '}
                   <span role="img" aria-label="smiley face">
                     🙂
-                  </span>{' '}
+                  </span>
                   Add me on{' '}
                   <a href="https://www.instagram.com/samilynn36/">
                     <i className="fab fa-instagram" /> Instagram
                   </a>{' '}
                   or message me on{' '}
                   <a href="https://www.facebook.com/sami.shroyer">
-                    <i className="fab fa-facebook" /> Facebook.
+                    <i className="fab fa-facebook" /> Facebook
                   </a>
                   .
                 </p>
               </div>
               <img src={headshot} className="icon-avatar" alt="avatar" />
-            </div>
-            <div>
-              <img src={kellerWilliamsLogo} className="kwLogo" />
             </div>
           </article>
         </section>
@@ -93,9 +89,5 @@ export function Contact({ className }) {
 export default styled(Contact)`
   .about-copy {
     padding-right: 15px;
-  }
-  .kwLogo {
-    max-width: 300px;
-    width: 100%;
   }
 `;
