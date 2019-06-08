@@ -31,7 +31,8 @@ export function Header({ className }) {
         <header className="header">
           <h1>
             <a href="https://samantha.realty">
-              Samantha Shroyer <FontAwesomeIcon icon={faHome} />
+              Samantha Shroyer
+              {/* <FontAwesomeIcon icon={faHome} /> */}
             </a>
           </h1>
           <h2>Real Estate Agent</h2>
