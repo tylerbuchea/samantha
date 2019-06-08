@@ -1,11 +1,14 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import styled from 'styled-components';
+import { config } from '@fortawesome/fontawesome-svg-core';
 
 import './skeleton.css';
 import './index.css';
 import useSiteMetadata from './SiteMetadata';
 import Footer from './Footer';
+
+config.autoAddCss = false;
 
 export function TemplateWrapper({ children, className }) {
   const { title, description } = useSiteMetadata();
