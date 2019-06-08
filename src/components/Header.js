@@ -32,7 +32,7 @@ export function Header({ className }) {
           <h1>
             <a href="https://samantha.realty">
               Samantha Shroyer
-              {/* <FontAwesomeIcon icon={faHome} /> */}
+              <FontAwesomeIcon icon={faHome} style={{ fontSize: 25 }} />
             </a>
           </h1>
           <h2>Real Estate Agent</h2>
@@ -45,13 +45,18 @@ export function Header({ className }) {
               <ul className="navbar-list">
                 <li className="navbar-item">
                   <a className="icon navbar-link" href="/">
-                    <FontAwesomeIcon icon={faHome} /> Home
+                    <FontAwesomeIcon style={{ fontSize: 17 }} icon={faHome} />{' '}
+                    Home
                   </a>
                 </li>
 
                 <li className="navbar-item">
                   <a className="icon navbar-link" href="/blog">
-                    <FontAwesomeIcon icon={faPencilAlt} /> Blog
+                    <FontAwesomeIcon
+                      style={{ fontSize: 17 }}
+                      icon={faPencilAlt}
+                    />{' '}
+                    Blog
                   </a>
                 </li>
 
@@ -62,7 +67,11 @@ export function Header({ className }) {
                     rel="noopener noreferrer"
                     href="https://www.instagram.com/samilynn36/"
                   >
-                    <FontAwesomeIcon icon={faInstagram} /> Instagram
+                    <FontAwesomeIcon
+                      style={{ fontSize: 17 }}
+                      icon={faInstagram}
+                    />{' '}
+                    Instagram
                   </a>
                 </li>
 
@@ -73,7 +82,11 @@ export function Header({ className }) {
                     rel="noopener noreferrer"
                     href="https://facebook.com/sami.shroyer"
                   >
-                    <FontAwesomeIcon icon={faFacebook} /> Facebook
+                    <FontAwesomeIcon
+                      style={{ fontSize: 17 }}
+                      icon={faFacebook}
+                    />{' '}
+                    Facebook
                   </a>
                 </li>
 
@@ -84,7 +97,11 @@ export function Header({ className }) {
                     rel="noopener noreferrer"
                     href="https://www.linkedin.com/in/tyler-buchea-b3a43376"
                   >
-                    <FontAwesomeIcon icon={faLinkedin} /> Linkedin
+                    <FontAwesomeIcon
+                      style={{ fontSize: 17 }}
+                      icon={faLinkedin}
+                    />{' '}
+                    Linkedin
                   </a>
                 </li>
               </ul>

@@ -29,7 +29,11 @@ export function Contact({ className }) {
             <ul className="contact-list">
               <li>
                 <a href="https://calendly.com/samantharealty">
-                  <FontAwesomeIcon icon={faCalendarAlt} /> Schedule a meeting
+                  <FontAwesomeIcon
+                    style={{ fontSize: 17 }}
+                    icon={faCalendarAlt}
+                  />{' '}
+                  Schedule a meeting
                 </a>
               </li>
               <li>
@@ -38,7 +42,8 @@ export function Contact({ className }) {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <FontAwesomeIcon icon={faFacebook} /> Message me on Facebook
+                  <FontAwesomeIcon style={{ fontSize: 17 }} icon={faFacebook} />{' '}
+                  Message me on Facebook
                 </a>
               </li>
               <li>
@@ -47,7 +52,8 @@ export function Contact({ className }) {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <FontAwesomeIcon icon={faEnvelope} /> Send me an email
+                  <FontAwesomeIcon style={{ fontSize: 17 }} icon={faEnvelope} />{' '}
+                  Send me an email
                 </a>
               </li>
               <li>
@@ -84,11 +90,19 @@ export function Contact({ className }) {
                   </span>
                   Add me on{' '}
                   <a href="https://www.instagram.com/samilynn36/">
-                    <FontAwesomeIcon icon={faInstagram} /> Instagram
+                    <FontAwesomeIcon
+                      style={{ fontSize: 15 }}
+                      icon={faInstagram}
+                    />{' '}
+                    Instagram
                   </a>{' '}
                   or message me on{' '}
                   <a href="https://www.facebook.com/sami.shroyer">
-                    <FontAwesomeIcon icon={faFacebook} /> Facebook
+                    <FontAwesomeIcon
+                      style={{ fontSize: 15 }}
+                      icon={faFacebook}
+                    />{' '}
+                    Facebook
                   </a>
                   .
                 </p>
