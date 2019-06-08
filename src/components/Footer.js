@@ -24,7 +24,8 @@ export function Footer({ className }) {
         <hr />
         <div className="grid">
           <div>
-            ©2019 Samantha Shroyer. All&nbsp;Rights&nbsp;Reserved. <br />
+            ©{new Date().getFullYear()} Samantha Shroyer.
+            All&nbsp;Rights&nbsp;Reserved. <br />
             Each office is independently owned and operated.
           </div>
 
