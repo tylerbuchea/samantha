@@ -10,8 +10,8 @@ export function Footer({ className }) {
       query {
         requiredLogo: file(relativePath: { eq: "required-logo.png" }) {
           childImageSharp {
-            fluid(quality: 100) {
-              ...GatsbyImageSharpFluid_withWebp
+            fixed(quality: 100, width: 120) {
+              ...GatsbyImageSharpFixed_withWebp
             }
           }
         }
@@ -28,13 +28,10 @@ export function Footer({ className }) {
             Each office is independently owned and operated.
           </div>
 
-          <div className="requiredLogos">
-            {/* <img src={requiredLogo} alt="required logo" /> */}
-            <Img
-              fluid={data.requiredLogo.childImageSharp.fluid}
-              className="requiredLogo"
-            />
-          </div>
+          <Img
+            fixed={data.requiredLogo.childImageSharp.fixed}
+            className="requiredLogo"
+          />
         </div>
       </div>
     </div>
@@ -63,12 +60,5 @@ export default styled(Footer)`
     .grid br {
       display: none;
     }
-  }
-  .requiredLogos {
-    width: 120px;
-  }
-  .requiredLogo {
-    width: 100%;
-    max-width: 120px;
   }
 `;

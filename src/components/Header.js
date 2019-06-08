@@ -17,7 +17,7 @@ export function Header({ className }) {
       query {
         kwLogo: file(relativePath: { eq: "keller-williams-logo.jpg" }) {
           childImageSharp {
-            fluid(quality: 100, maxWidth: 220) {
+            fluid(quality: 100, maxWidth: 230) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }
@@ -35,7 +35,9 @@ export function Header({ className }) {
             </a>
           </h1>
           <h2>Real Estate Agent</h2>
-          <Img fluid={data.kwLogo.childImageSharp.fluid} className="kwLogo" />
+          <div className="kwLogo">
+            <Img fluid={data.kwLogo.childImageSharp.fluid} />
+          </div>
 
           <nav className="navbar">
             <div className="container">
