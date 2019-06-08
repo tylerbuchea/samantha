@@ -1,34 +1,54 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-
-import kellerWilliamsLogo from '../img/keller-williams-logo.jpg';
+import { useStaticQuery, graphql } from 'gatsby';
+import Img from 'gatsby-image';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome, faPencilAlt } from '@fortawesome/free-solid-svg-icons';
+import {
+  faInstagram,
+  faFacebook,
+  faLinkedin,
+} from '@fortawesome/free-brands-svg-icons';
 
 export function Header({ className }) {
+  const data = useStaticQuery(
+    graphql`
+      query {
+        kwLogo: file(relativePath: { eq: "keller-williams-logo.jpg" }) {
+          childImageSharp {
+            fluid(quality: 100, maxWidth: 220) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+      }
+    `
+  );
   return (
     <div className={className}>
       <div className="container-restricted">
         <header className="header">
           <h1>
             <a href="https://samantha.realty">
-              Samantha Shroyer <i className="fa fa-home" />
+              Samantha Shroyer <FontAwesomeIcon icon={faHome} />
             </a>
           </h1>
           <h2>Real Estate Agent</h2>
-          <img src={kellerWilliamsLogo} className="kwLogo" />
+          <Img fluid={data.kwLogo.childImageSharp.fluid} className="kwLogo" />
 
           <nav className="navbar">
             <div className="container">
               <ul className="navbar-list">
                 <li className="navbar-item">
                   <a className="icon navbar-link" href="/">
-                    <i className="fa fa-home" /> Home
+                    <FontAwesomeIcon icon={faHome} /> Home
                   </a>
                 </li>
 
                 <li className="navbar-item">
                   <a className="icon navbar-link" href="/blog">
-                    <i className="fa fa-pencil-alt" /> Blog
+                    <FontAwesomeIcon icon={faPencilAlt} /> Blog
                   </a>
                 </li>
 
@@ -39,7 +59,7 @@ export function Header({ className }) {
                     rel="noopener noreferrer"
                     href="https://www.instagram.com/samilynn36/"
                   >
-                    <i className="fab fa-instagram" /> Instagram
+                    <FontAwesomeIcon icon={faInstagram} /> Instagram
                   </a>
                 </li>
 
@@ -50,7 +70,7 @@ export function Header({ className }) {
                     rel="noopener noreferrer"
                     href="https://facebook.com/sami.shroyer"
                   >
-                    <i className="fab fa-facebook" /> Facebook
+                    <FontAwesomeIcon icon={faFacebook} /> Facebook
                   </a>
                 </li>
 
@@ -61,7 +81,7 @@ export function Header({ className }) {
                     rel="noopener noreferrer"
                     href="https://www.linkedin.com/in/tyler-buchea-b3a43376"
                   >
-                    <i className="fab fa-linkedin" /> Linkedin
+                    <FontAwesomeIcon icon={faLinkedin} /> Linkedin
                   </a>
                 </li>
               </ul>

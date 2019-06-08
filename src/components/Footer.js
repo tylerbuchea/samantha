@@ -1,10 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-
-import requiredLogo from '../img/required-logo.png';
+import Img from 'gatsby-image';
+import { useStaticQuery, graphql } from 'gatsby';
 
 export function Footer({ className }) {
+  const data = useStaticQuery(
+    graphql`
+      query {
+        requiredLogo: file(relativePath: { eq: "required-logo.png" }) {
+          childImageSharp {
+            fluid(quality: 100) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+      }
+    `
+  );
   return (
     <div className={className}>
       <div className="container-restricted">
@@ -16,7 +29,11 @@ export function Footer({ className }) {
           </div>
 
           <div className="requiredLogos">
-            <img src={requiredLogo} alt="required logo" />
+            {/* <img src={requiredLogo} alt="required logo" /> */}
+            <Img
+              fluid={data.requiredLogo.childImageSharp.fluid}
+              className="requiredLogo"
+            />
           </div>
         </div>
       </div>
@@ -48,9 +65,10 @@ export default styled(Footer)`
     }
   }
   .requiredLogos {
-    width: 100%;
+    width: 120px;
   }
-  .requiredLogos img {
+  .requiredLogo {
+    width: 100%;
     max-width: 120px;
   }
 `;

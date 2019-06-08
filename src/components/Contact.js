@@ -1,9 +1,25 @@
 import React from 'react';
 import styled from 'styled-components';
-
-import headshot from '../img/headshot.jpg';
+import { useStaticQuery, graphql } from 'gatsby';
+import Img from 'gatsby-image';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCalendarAlt, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 export function Contact({ className }) {
+  const data = useStaticQuery(
+    graphql`
+      query {
+        headshot: file(relativePath: { eq: "headshot.jpg" }) {
+          childImageSharp {
+            fluid(quality: 100, maxWidth: 150) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+      }
+    `
+  );
   return (
     <div className={className}>
       <div className="container-restricted">
@@ -13,7 +29,7 @@ export function Contact({ className }) {
             <ul className="contact-list">
               <li>
                 <a href="https://calendly.com/samantharealty">
-                  <i className="fa fa-calendar-alt" /> Schedule a meeting
+                  <FontAwesomeIcon icon={faCalendarAlt} /> Schedule a meeting
                 </a>
               </li>
               <li>
@@ -22,7 +38,7 @@ export function Contact({ className }) {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <i className="fab fa-facebook" /> Message me on Facebook
+                  <FontAwesomeIcon icon={faFacebook} /> Message me on Facebook
                 </a>
               </li>
               <li>
@@ -31,7 +47,7 @@ export function Contact({ className }) {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <i className="fa fa-envelope" /> Send me an email
+                  <FontAwesomeIcon icon={faEnvelope} /> Send me an email
                 </a>
               </li>
               <li>
@@ -68,16 +84,22 @@ export function Contact({ className }) {
                   </span>
                   Add me on{' '}
                   <a href="https://www.instagram.com/samilynn36/">
-                    <i className="fab fa-instagram" /> Instagram
+                    <FontAwesomeIcon icon={faInstagram} /> Instagram
                   </a>{' '}
                   or message me on{' '}
                   <a href="https://www.facebook.com/sami.shroyer">
-                    <i className="fab fa-facebook" /> Facebook
+                    <FontAwesomeIcon icon={faFacebook} /> Facebook
                   </a>
                   .
                 </p>
               </div>
-              <img src={headshot} className="icon-avatar" alt="avatar" />
+              <div className="icon-avatar-wrapper">
+                <Img
+                  fluid={data.headshot.childImageSharp.fluid}
+                  className="icon-avatar"
+                  alt="avatar"
+                />
+              </div>
             </div>
           </article>
         </section>
@@ -89,5 +111,10 @@ export function Contact({ className }) {
 export default styled(Contact)`
   .about-copy {
     padding-right: 15px;
+  }
+  .icon-avatar-wrapper {
+    border: 3px solid #33c3f0;
+    padding: 5px;
+    border-radius: 50%;
   }
 `;
