@@ -95,7 +95,18 @@ export function Header({ className }) {
                     className="icon navbar-link"
                     target="_blank"
                     rel="noopener noreferrer"
-                    href="https://www.linkedin.com/in/tyler-buchea-b3a43376"
+                    href="https://l.messenger.com/l.php?u=https%3A%2F%2Fwww.realtor.com%2Frealestateagents%2Fsamantha-shroyer_portland_or_3752970_658679092&h=AT0WEw87hSqimWtirRuG4p6NJVkIVuDmq3a0ODAZ5yqcjmVZkkqhGd_l_UZCQSye-30DWzx50Mk8vfRU9l2xxw22YUuEb7fr_rEpcoPz4IgAVHjffTIg5O0J6rDsYYR9lu4H_mgJ"
+                  >
+                    <strong>R</strong> Realtor.com
+                  </a>
+                </li>
+
+                <li className="navbar-item">
+                  <a
+                    className="icon navbar-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://www.linkedin.com/in/samantha-shroyer-9a7780194/"
                   >
                     <FontAwesomeIcon
                       style={{ fontSize: 17 }}

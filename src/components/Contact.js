@@ -48,7 +48,7 @@ export function Contact({ className }) {
               </li>
               <li>
                 <a
-                  href="mailto:samilynn3654@gmail.com"
+                  href="mailto:samantha@samantha.realty"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -58,7 +58,7 @@ export function Contact({ className }) {
               </li>
               <li>
                 <form
-                  action="//formspree.io/samilynn3654@gmail.com"
+                  action="//formspree.io/samantha@samantha.realty"
                   method="POST"
                 >
                   <input
@@ -89,7 +89,7 @@ export function Contact({ className }) {
                     🙂
                   </span>
                   Add me on{' '}
-                  <a href="https://www.instagram.com/samilynn36/">
+                  <a href="https://www.instagram.com/samantha.realty/">
                     <FontAwesomeIcon
                       style={{ fontSize: 15 }}
                       icon={faInstagram}
