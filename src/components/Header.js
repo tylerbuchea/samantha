@@ -22,6 +22,13 @@ export function Header({ className }) {
             }
           }
         }
+        realtorCom: file(relativePath: { eq: "realtor-small.jpg" }) {
+          childImageSharp {
+            fluid(quality: 100, maxWidth: 150) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
       }
     `
   );
@@ -92,12 +99,21 @@ export function Header({ className }) {
 
                 <li className="navbar-item">
                   <a
-                    className="icon navbar-link"
+                    className="icon navbar-link navbar-link-flex"
                     target="_blank"
                     rel="noopener noreferrer"
                     href="https://l.messenger.com/l.php?u=https%3A%2F%2Fwww.realtor.com%2Frealestateagents%2Fsamantha-shroyer_portland_or_3752970_658679092&h=AT0WEw87hSqimWtirRuG4p6NJVkIVuDmq3a0ODAZ5yqcjmVZkkqhGd_l_UZCQSye-30DWzx50Mk8vfRU9l2xxw22YUuEb7fr_rEpcoPz4IgAVHjffTIg5O0J6rDsYYR9lu4H_mgJ"
                   >
-                    <strong>R</strong> Realtor.com
+                    <Img
+                      fluid={data.realtorCom.childImageSharp.fluid}
+                      style={{
+                        width: 17,
+                        height: 16,
+                        position: 'relative',
+                        bottom: 2,
+                      }}
+                    />{' '}
+                    <div>Realtor.com</div>
                   </a>
                 </li>
 

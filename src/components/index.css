@@ -101,6 +101,17 @@ form input[type='email'] {
   flex: 1;
 }
 
+.navbar-link-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-link-flex div {
+  margin-left: 5px;
+  padding-top: 0px;
+}
+
 .navbar-link.active {
   color: #33c3f0;
 }
