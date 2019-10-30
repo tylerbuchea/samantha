@@ -62,6 +62,7 @@ export function Contact({ className }) {
                   method="POST"
                 >
                   <input
+                    title="Send me an email"
                     type="email"
                     name="_replyto"
                     placeholder="your-email@example.com"

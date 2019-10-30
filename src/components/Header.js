@@ -72,7 +72,7 @@ export function Header({ className }) {
                     className="icon navbar-link"
                     target="_blank"
                     rel="noopener noreferrer"
-                    href="https://www.instagram.com/samilynn36/"
+                    href="https://www.instagram.com/samantha.realty/"
                   >
                     <FontAwesomeIcon
                       style={{ fontSize: 17 }}
